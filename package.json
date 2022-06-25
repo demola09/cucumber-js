@@ -1,0 +1,66 @@
+{
+  "name": "ademola-adelekan-cucumber-framework",
+  "version": "1.0.0",
+  "description": "e2e project framework to get started",
+  "scripts": {
+    "clean": "rm -rf dist && rm -rf .cache",
+    "compile": "parcel build --target node --no-source-maps -d dist ./tests/**/*.ts",
+    "build": "npm run clean && npm run compile",
+    "test:server": "./node_modules/.bin/cucumber-js ./tests -r dist/step_definitions/*.js --fail-fast",
+    "cucumber": "./node_modules/.bin/cucumber-js ./tests --targetUrl=https://wat-01.levelten.energy ",
+    "cucumber:parallel": "ts-node --project tests/tsconfig.json tests/scripts/cucumber-runner",
+    "lint": "tslint -p tests",
+    "generateTestReport": "node ./tests/support/reporter.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "cucumberjs",
+    "cucumberjs typescript",
+    "selenium webdriver",
+    "testing",
+    "e2e functional test automation",
+    "bdd",
+    "behavioural driven development",
+    "gherkin",
+    "Login test automation project"
+  ],
+  "author": "Ademola Adelekan <ademolaadelekan09@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/demola09/cucumber-js.git/blob/master/README.md",
+  "devDependencies": {
+    "@types/chai": "^4.0.1",
+    "@types/cucumber": "4.0.4",
+    "@types/fs-extra": "^5.0.4",
+    "@types/lodash": "4.14.85",
+    "@types/make-dir": "1.0.3",
+    "@types/node": "8.10.7",
+    "@types/node-fetch": "1.6.7",
+    "@types/selenium-webdriver": "3.0.8",
+    "@types/winston": "^2.4.4",
+    "@types/yargs": "11.0.0",
+    "chromedriver": "2.41.0",
+    "geckodriver": "1.12.2",
+    "dotenv-safe": "^4.0.4",
+    "fs-extra": "7.0.0",
+    "lodash": "^4.17.13",
+    "node-fetch": "2.0.0",
+    "parcel-bundler": "1.10.3",
+    "ts-node": "4.1.0",
+    "tslint": "5.9.1",
+    "tslint-eslint-rules": "^4.1.1",
+    "typescript": "2.6.2",
+    "winston": "2.4.0"
+  },
+  "dependencies": {
+    "browserstack-local": "1.3.0",
+    "chai": "^4.0.2",
+    "cucumber": "5.0.1",
+    "cucumber-html-reporter": "4.0.2",
+    "make-dir": "^1.0.0",
+    "selenium-webdriver": "3.6.0",
+    "yargs": "9.0.1"
+  }
+}
